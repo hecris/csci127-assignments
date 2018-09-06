@@ -10,6 +10,14 @@ def make_abba(a, b):
 
 print(make_abba('hello', 'bye'))
 
+def make_out_word(out, word):
+  mid = len(out) // 2
+  first_part = out[:mid]
+  last_part = out[mid:]
+  return first_part + word + last_part
+
+print(make_out_word('<<>>', 'chris'))
+
 # String-2
 def double_char(str):
   result = ''
@@ -34,6 +42,7 @@ def count_evens(nums):
         if n % 2 == 0:
             count += 1
     return count
+
 
 print(count_evens([2, 3, 4, 5, 6]))
 
