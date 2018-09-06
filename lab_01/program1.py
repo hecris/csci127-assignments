@@ -18,6 +18,14 @@ def make_out_word(out, word):
 
 print(make_out_word('<<>>', 'chris'))
 
+def non_start(a, b):
+    """Given 2 strings, return their concatenation,
+    except omit the first char of each.
+    The strings will be at least length 1."""
+    return a[1:] + b[1:]
+
+print(non_start('java', 'script'))
+
 # String-2
 def double_char(str):
   result = ''
@@ -26,6 +34,14 @@ def double_char(str):
   return result
 
 print(double_char('hello'))
+
+# Logic-1
+def love6(a, b):
+    """
+    Given two int values, a and b, return True if either one is 6.
+    Or if their sum or difference is 6."""
+    return (a == 6 or b == 6 or abs(a - b) == 6 or a + b == 6)
+
 
 # List-1
 
