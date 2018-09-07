@@ -48,6 +48,62 @@ def front_back(str):
 def front3(str):
     return str[:3] * 3
 
+# Warmup-2
+def string_times(str, n):
+    return str * n
+
+def front_times(str, n):
+    return str[:3] * n
+
+def string_bits(str):
+    return str[::2]
+
+def string_splosion(str):
+    res = ''
+    for i in range(len(str) + 1):
+        res = res + str[:i]
+    return res
+
+def last2(str):
+  if len(str) <= 2:
+    return 0
+  
+  search = str[-2:]
+  count = 0
+  
+  for i in range(len(str) - 2):
+    substring = str[i:i + 2]
+    if substring == search:
+      count = count + 1
+  
+  return count
+
+def array_count9(nums):
+    count = 0
+    for i in nums:
+        if i == 9:
+            count += 1
+    return count
+
+def array_front9(nums):
+    for i in nums[:4]:
+        if i == 9:
+            return True
+    return False
+
+def array123(nums):
+    for i in range(len(nums)):
+        if nums[i:i + 3] == [1, 2, 3]:
+            return True
+    return False
+
+def string_match(a, b):
+  count = 0
+  for i in range(len(a) - 1):
+    if a[i: i + 2] == b[i: i + 2]:
+      count += 1
+  return count
+
 # String-1
 
 def hello_name(name):
@@ -115,6 +171,26 @@ def love6(a, b):
 def first_last6(nums):
   return (nums[0] == 6 or nums[-1] == 6)
 
+def same_first_last(nums):
+  if len(nums) < 1:
+    return False
+  return nums[0] == nums[-1]
+
+def make_pi():
+    return [3,1,4]
+
+def common_end(a, b):
+    return (a[0] == b[0] or a[-1] == b[-1])
+
+def sum3(nums):
+    return sum(nums)
+
+def rotate_left3(nums):
+    return nums[1:] + nums[:1]
+
+def reverse3(nums):
+    return nums[::-1]
+
 # List-2
 def count_evens(nums):
     count = 0
@@ -123,6 +199,7 @@ def count_evens(nums):
             count += 1
     return count
 
+
 def big_diff(nums):
     minimum = nums[0]
     maximum = nums[0]
@@ -130,6 +207,13 @@ def big_diff(nums):
         minimum = min(minimum, i)
         maximum = max(maximum, i)
     return maximum - minimum
+
+def centered_average(nums):
+    nums.sort()
+    middle = nums[1:-1]
+    return sum(middle) // len(middle)
+
+    
 
 
     
