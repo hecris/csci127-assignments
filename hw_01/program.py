@@ -14,7 +14,7 @@ def init(name):
     and capitalized last name
     """
     
-    return name[0].upper() + '. ' + name.split(' ')[1]
+    return name[0].upper() + '. ' + name.split(' ')[1][0].upper() + name.split(' ')[1][1:]
     #alternative
     #return name[0].upper() + '.' + name[name.find(' '):]
 
@@ -36,9 +36,9 @@ def make_tags(tag, word):
     return '<' + tag + '>' + word + '</' + tag + '>'
 
 
-print(capitalize('Christopher He'))
+print(capitalize('christopher he'))
 
-print(init('Christopher He'))
+print(init('christopher he'))
 
 print(part_pig_latin('hello'))
 
