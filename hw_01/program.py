@@ -4,8 +4,8 @@ def capitalize(name):
     output: returns a string with each of the two words capitalized
     note: this is the one we started in class
     """
-    return name.upper()
-
+    s = name.split()
+    return s[0][0].upper() + s[0][1:] + ' ' + s[1][0].upper() + s[1][1:]
 
 def init(name):
     """
