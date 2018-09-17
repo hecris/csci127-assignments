@@ -1,6 +1,6 @@
 # Christopher He and Krystlle Fajardo
 def piglatinify(name):
-    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    vowels = 'aeiouAEIOU'
     if name[0] in vowels:
         return name + 'ay'
     return name[1:] + name[:1] + 'ay'
