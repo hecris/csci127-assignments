@@ -15,5 +15,5 @@ def fizzbuzz(max_value):
         i = i + 1
     return count
 
-print(fizzbuzz(100))
+print("# of 'FizzBuzz' = " + str(fizzbuzz(100)))
 
