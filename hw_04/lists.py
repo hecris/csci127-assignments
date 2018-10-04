@@ -21,6 +21,7 @@ d = build_random_list(10, 3)
 print(d)
 
 def locate(l, value):
+    print('index of:', value, 'in', l)
     i = 0
     while i < len(l):
         if l[i] == value:
@@ -31,6 +32,7 @@ def locate(l, value):
 print(locate(d, 2))
 
 def count(l, value):
+    print('number of', value, 'in', l)
     n = 0
     i = 0
     while i < len(l):
@@ -56,7 +58,7 @@ decreasing = [3, 2, 1, 0]
 
 
 def isIncreasing(l):
-    print('Is increasing?: ', l)
+    print('Is increasing?', l)
     i = 1
     while i < len(l):
         if l[i - 1] >= l[i]:
