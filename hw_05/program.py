@@ -1,8 +1,9 @@
 def filterodd(l):
+    res = []
     for i in l:
-        if i % 2 == 0:
-            l.remove(i)
-    return l
+        if i % 2 != 0:
+            res.append(i)
+    return res
 
 def mapsquare(l):
     res = []
