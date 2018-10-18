@@ -1,3 +1,4 @@
+# Christopher He and Darren Zou
 import random
 
 dictionary = {
@@ -12,7 +13,7 @@ dictionary = {
     }
 
 sentence = """Pizza was invented by a <adj> <nationality> chef named <person>. 
-To make pizza, you need to take a lump of <noun> and make a thin,round <adj> <noun>. 
+To make pizza, you need to take a lump of <noun> and make a thin, round <adj> <noun>. 
 Then you cover it with <adj> sauce, <adj> cheese and fresh chopped <pluralnoun>. 
 Next you have to bake it in a very hot <noun>. 
 When it is done, cut it into <number> <shape>. 
@@ -20,30 +21,29 @@ Some kids like <food> pizza the best, but my favorite is the <food> pizza."""
 
 
 def madlibs(sentence):
-    sentence = take_care_of_punc(sentence, True)
     l = sentence.split()
     res = []
     for w in l:
-        if '<' in w:
-            to_replace = w[1:-1]
-            word_bank = dictionary[to_replace].split(',')
-            res.append(get_random_from_list(word_bank))
+        if '<' in w and '>' in w:
+            key = extract_key(w)
+            choice = choose_and_remove_from(key, dictionary) # avoid repeats
+            replaced = w.replace(key, choice).replace('<', '').replace('>', '')
+            res.append(replaced)
         else:
             res.append(w)
-    new_sentence = take_care_of_punc(" ".join(res), False)
+    new_sentence = " ".join(res)
     return new_sentence
 
-def take_care_of_punc(sentence, splitting):
-    if splitting: # add spaces to punctuation for splitting
-        sentence = sentence.replace(".", " . ")
-        sentence = sentence.replace(",", " , ")
-    else: # proper punctuation back in
-        sentence = sentence.replace(" .", ".")
-        sentence = sentence.replace(" ,", ",")
-    return sentence
+def extract_key(s):
+    start = s.index('<') + 1
+    end = s.index('>')
+    return s[start:end]
 
-def get_random_from_list(l):
-    rng = random.randint(0, len(l) - 1)
-    return l[rng]
+def choose_and_remove_from(key, dictionary):
+    word_bank = dictionary[key].split(',')
+    choice = random.choice(word_bank)
+    dictionary[key] = dictionary[key].replace("," + choice, "")
+    return choice
+
 
 print(madlibs(sentence))
