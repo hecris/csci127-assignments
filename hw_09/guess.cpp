@@ -16,8 +16,9 @@ int main(){
         cout << "Not a valid number\n";
         return -1;
     }
+    cout << "\n";
     int lower = 0;
-    int upper = 99;
+    int upper = 100;
     int guess;
     while (true){
         guess = (lower + upper) / 2;
@@ -31,6 +32,9 @@ int main(){
         }
         else if (input == 0){
             break;
+        }
+        else {
+            continue;
         }
     }
     cout << "\nDone! Your number was " << guess << "\n";
